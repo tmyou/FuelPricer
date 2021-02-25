@@ -1,19 +1,19 @@
 import React, { Component } from "react";
 import styled, { css } from "styled-components";
-import MaterialCommunityIconsIcon from "react-native-vector-icons/dist/MaterialCommunityIcons";
+import FontAwesomeIcon from "react-native-vector-icons/dist/FontAwesome";
 
-function TextInputIcon100(props) {
+function TextZip(props) {
   return (
     <Container {...props}>
-      <MaterialCommunityIconsIcon
-        name="calendar"
+      <FontAwesomeIcon
+        name="location-arrow"
         style={{
           color: "#616161",
           fontSize: 24,
           paddingLeft: 8
         }}
-      ></MaterialCommunityIconsIcon>
-      <InputStyle placeholder="Label"></InputStyle>
+      ></FontAwesomeIcon>
+      <InputStyle placeholder="Zip Code" maxLength={9}></InputStyle>
     </Container>
   );
 }
@@ -34,13 +34,12 @@ const InputStyle = styled.input`
   align-self: stretch;
   flex: 1 1 0%;
   line-height: 16px;
-  padding-bottom: 0px;
-  font-weight: 400;
   padding: 0px;
+  padding-left: 4px;
   border: none;
   background: transparent;
   display: flex;
   flex-direction: column;
 `;
 
-export default TextInputIcon100;
+export default TextZip;

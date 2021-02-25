@@ -1,21 +1,25 @@
 {
-  "name": "bx-app",
+  "name": "fuelpricer",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@material-ui/core": "^4.2.1",
+    "@builderx/icons": "0.1.10",
+    "@material-ui/core": "4.11.3",
     "google-map-react": "^1.1.4",
+    "infinite-react-carousel": "1.2.11",
     "material-ui-slider": "^3.0.8",
     "pure-react-carousel": "^1.21.1",
     "react": "^16.8.6",
+    "react-app-rewired": "2.1.8",
+    "react-bootstrap": "1.5.0",
     "react-dom": "^16.8.6",
-    "react-list": "^0.8.11",
+    "react-list": "0.8.16",
+    "react-native-vector-icons": "8.1.0",
+    "react-native-web": "0.15.0",
     "react-router-dom": "^5.0.1",
-    "react-scripts": "3.0.1",
-    "styled-components": "^4.3.2",
-    "react-app-rewired": "2.1.3",
-    "react-native-vector-icons": "6.6.0",
-    "react-native-web": "0.11.7"
+    "react-scripts": "4.0.3",
+    "react-slick": "0.28.0",
+    "styled-components": "^4.3.2"
   },
   "scripts": {
     "start": "react-app-rewired start",
@@ -37,5 +41,7 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  }
+  },
+  "keywords": [],
+  "description": ""
 }

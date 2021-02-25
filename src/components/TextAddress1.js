@@ -1,29 +1,29 @@
 import React, { Component } from "react";
 import styled, { css } from "styled-components";
-import FeatherIcon from "react-native-vector-icons/dist/Feather";
+import FontAwesomeIcon from "react-native-vector-icons/dist/FontAwesome";
 
-function StateInputIcon(props) {
+function TextAddress1(props) {
   return (
     <Container {...props}>
-      <FeatherIcon
-        name="map"
+      <FontAwesomeIcon
+        name="map-marker"
         style={{
           color: "#616161",
           fontSize: 24,
           paddingLeft: 8
         }}
-      ></FeatherIcon>
-      <InputStyle placeholder="State" maxLength={2}></InputStyle>
+      ></FontAwesomeIcon>
+      <InputStyle placeholder="Address Line 1" maxLength={100}></InputStyle>
     </Container>
   );
 }
 
 const Container = styled.div`
   display: flex;
-  background-color: rgba(230,230,230,1);
   flex-direction: row;
   align-items: center;
   border-radius: 10px;
+  background-color: rgba(230, 230, 230,1);
 `;
 
 const InputStyle = styled.input`
@@ -36,10 +36,11 @@ const InputStyle = styled.input`
   line-height: 16px;
   font-weight: 400;
   padding: 0px;
+  padding-left: 9px;
   border: none;
   background: transparent;
   display: flex;
   flex-direction: column;
 `;
 
-export default StateInputIcon;
+export default TextAddress1;

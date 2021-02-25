@@ -4,7 +4,7 @@ import styled, { css } from "styled-components";
 function ButtonSmallBlue(props) {
   return (
     <Container {...props}>
-      <Button>Button</Button>
+      <Button>{props.button || "Button"}</Button>
     </Container>
   );
 }

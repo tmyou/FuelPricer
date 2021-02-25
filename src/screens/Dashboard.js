@@ -1,25 +1,19 @@
 import React, { Component } from "react";
 import styled, { css } from "styled-components";
-import BgGradientBottom from "../components/BgGradientBottom";
 import { Link } from "react-router-dom";
 import ButtonBig from "../components/ButtonBig";
 import ButtonFancy from "../components/ButtonFancy";
 
 function Dashboard(props) {
   return (
-    <Container>
-      <BgGradientBottom
-        style={{
-          position: "absolute",
-          top: 0,
-          left: 0,
-          right: 0,
-          bottom: 0
-        }}
-      ></BgGradientBottom>
+    <Container
+      style={{
+        backgroundImage: `linear-gradient(180deg, rgba(242, 213, 153, 1) 17%, #eeeeee 100%)`
+      }}
+    >
       <Logo src={require("../assets/images/fuel23.png")}></Logo>
       <Greeting>Good afternoon, *Client*.</Greeting>
-      <Prompt>Where u tryna go homie?</Prompt>
+      <Prompt>What would you like to do today?</Prompt>
       <Navigator>
         <Link to="/FuelQuoteHistory">
           <QuoteHistory>
@@ -39,7 +33,7 @@ function Dashboard(props) {
           </QuoteHistory>
         </Link>
         <Link to="/FuelQuoteForm">
-          <Button5>
+          <FuelQuote>
             <ButtonOverlay>
               <ButtonBig
                 style={{
@@ -49,10 +43,10 @@ function Dashboard(props) {
                 button="New Fuel Quote"
               ></ButtonBig>
             </ButtonOverlay>
-          </Button5>
+          </FuelQuote>
         </Link>
         <Link to="/ProfileManagement">
-          <Button4>
+          <ProfileManagement>
             <ButtonOverlay>
               <ButtonBig
                 style={{
@@ -62,10 +56,10 @@ function Dashboard(props) {
                   borderBottomRightRadius: 100,
                   backgroundColor: "rgba(52,217,82,1)"
                 }}
-                button="ProfileManagement"
+                button="Profile Management"
               ></ButtonBig>
             </ButtonOverlay>
-          </Button4>
+          </ProfileManagement>
         </Link>
       </Navigator>
       <Link to="/Splash">
@@ -83,28 +77,30 @@ function Dashboard(props) {
           </ButtonOverlay>
         </Button6>
       </Link>
+      <br />
+
+      <Container></Container>
     </Container>
   );
 }
 
 const Container = styled.div`
   display: flex;
-  background-color: rgba(230, 230, 230,1);
+  background-size: 100%;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  position: relative;
   height: 100vh;
   width: 100vw;
 `;
 
 const ButtonOverlay = styled.button`
- display: block;
- background: none;
- height: 100%;
- width: 100%;
- border:none
- `;
+  display: block;
+  background: none;
+  height: 100%;
+  width: 100%;
+  border: none;
+`;
 const Logo = styled.img`
   width: 174px;
   height: 100%;
@@ -116,11 +112,12 @@ const Greeting = styled.span`
   font-style: normal;
   font-weight: 400;
   color: #121212;
+  /* color: #ffffff; */
   height: 72px;
   font-size: 50px;
   text-align: center;
-  align-self: center;
-  margin-top: 10px;
+  width: 100vw;
+  margin-top: 20px;
   margin-bottom: 10px;
 `;
 
@@ -131,6 +128,7 @@ const Prompt = styled.span`
   color: #121212;
   font-size: 20px;
   text-align: center;
+  height: 24px;
   align-self: center;
 `;
 
@@ -138,8 +136,11 @@ const Navigator = styled.div`
   width: 1260px;
   height: 120px;
   flex-direction: row;
-  margin-top: 100px;
-  margin-bottom: 100px;
+  margin-top: 80px;
+  margin-bottom: 80px;
+  left: 53px;
+  top: 476px;
+  flex-wrap: wrap;
   display: flex;
 `;
 
@@ -150,14 +151,14 @@ const QuoteHistory = styled.div`
   border: none;
 `;
 
-const Button5 = styled.div`
+const FuelQuote = styled.div`
   flex-direction: row;
   width: 420px;
   height: 120px;
   border: none;
 `;
 
-const Button4 = styled.div`
+const ProfileManagement = styled.div`
   flex-direction: row;
   width: 420px;
   height: 120px;

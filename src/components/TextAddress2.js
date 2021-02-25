@@ -2,27 +2,27 @@ import React, { Component } from "react";
 import styled, { css } from "styled-components";
 import FontAwesomeIcon from "react-native-vector-icons/dist/FontAwesome";
 
-function ZipInputIcon(props) {
+function TextAddress2(props) {
   return (
     <Container {...props}>
       <FontAwesomeIcon
-        name="location-arrow"
+        name="map-marker"
         style={{
           color: "#616161",
           fontSize: 24,
           paddingLeft: 8
         }}
       ></FontAwesomeIcon>
-      <InputStyle placeholder="Zip Code" maxLength={9}></InputStyle>
+      <InputStyle placeholder="Address Line 2" maxLength={100}></InputStyle>
     </Container>
   );
 }
 
 const Container = styled.div`
   display: flex;
-  background-color: rgba(230,230,230,1);
   flex-direction: row;
   align-items: center;
+  background-color: rgba(230, 230, 230,1);
   border-radius: 10px;
 `;
 
@@ -35,10 +35,11 @@ const InputStyle = styled.input`
   flex: 1 1 0%;
   line-height: 16px;
   padding: 0px;
+  padding-left: 9px;
   border: none;
   background: transparent;
   display: flex;
   flex-direction: column;
 `;
 
-export default ZipInputIcon;
+export default TextAddress2;

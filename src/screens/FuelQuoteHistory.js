@@ -1,77 +1,40 @@
 import React, { Component } from "react";
 import styled, { css } from "styled-components";
-import BgGradientBottomRight from "../components/BgGradientBottomRight";
-import TextInputIcon50 from "../components/TextInputIcon50";
-import TextInputIcon100 from "../components/TextInputIcon100";
-import StateInputIcon from "../components/StateInputIcon";
-import ZipInputIcon from "../components/ZipInputIcon";
+import TextState from "../components/TextState";
+import TextZip from "../components/TextZip";
 import ButtonSmallBlue from "../components/ButtonSmallBlue";
 import ButtonSmallGrey from "../components/ButtonSmallGrey";
 import { Link } from "react-router-dom";
 import ButtonFancy from "../components/ButtonFancy";
+import ReactList from "react-list";
 
 function FuelQuoteHistory(props) {
   return (
-    <Container>
-      <BgGradientBottomRight
-        style={{
-          position: "absolute",
-          top: 0,
-          left: 0,
-          right: 0,
-          bottom: 0
-        }}
-      ></BgGradientBottomRight>
+    <Container
+      style={{
+        backgroundImage: `linear-gradient(215deg, rgba(242,213,153,1) 20%, #FFFFFF 90%)`
+      }}
+    >
       <QuoteForm>
         <BoxHeader>
           <Center>
             <Text>FUEL QUOTE FORM</Text>
           </Center>
         </BoxHeader>
-        <TextInputIcon50
-          style={{
-            width: 300,
-            height: 35,
-            marginRight: 20,
-            marginLeft: 20,
-            marginBottom: 10
-          }}
-        ></TextInputIcon50>
-        <TextInputIcon100
+        <TextState
           style={{
             width: 300,
             height: 35,
             marginBottom: 10
           }}
-        ></TextInputIcon100>
-        <TextInputIcon100
-          style={{
-            width: 300,
-            height: 35,
-            marginBottom: 10
-          }}
-        ></TextInputIcon100>
-        <TextInputIcon100
-          style={{
-            width: 300,
-            height: 35,
-            marginBottom: 10
-          }}
-        ></TextInputIcon100>
-        <StateInputIcon
-          style={{
-            width: 300,
-            height: 35,
-            marginBottom: 10
-          }}
-        ></StateInputIcon>
-        <ZipInputIcon
+        ></TextState>
+        <TextZip
           style={{
             width: 300,
             height: 35,
             marginBottom: 15
           }}
-        ></ZipInputIcon>
+        ></TextZip>
         <ButtonSmallBlue
           style={{
             width: 100,
@@ -112,50 +75,20 @@ function FuelQuoteHistory(props) {
             <FuelQuote>FUEL QUOTE</FuelQuote>
           </Center>
         </BoxHeader1>
-        <TextInputIcon50
-          style={{
-            width: 300,
-            height: 35,
-            marginRight: 20,
-            marginLeft: 20,
-            marginBottom: 10
-          }}
-        ></TextInputIcon50>
-        <TextInputIcon100
+        <TextState
           style={{
             width: 300,
             height: 35,
             marginBottom: 10
           }}
-        ></TextInputIcon100>
-        <TextInputIcon100
-          style={{
-            width: 300,
-            height: 35,
-            marginBottom: 10
-          }}
-        ></TextInputIcon100>
-        <TextInputIcon100
-          style={{
-            width: 300,
-            height: 35,
-            marginBottom: 10
-          }}
-        ></TextInputIcon100>
-        <StateInputIcon
-          style={{
-            width: 300,
-            height: 35,
-            marginBottom: 10
-          }}
-        ></StateInputIcon>
-        <ZipInputIcon
+        ></TextState>
+        <TextZip
           style={{
             width: 300,
             height: 35,
             marginBottom: 15
           }}
-        ></ZipInputIcon>
+        ></TextZip>
         <ButtonSmallBlue
           style={{
             width: 100,
@@ -177,36 +110,35 @@ function FuelQuoteHistory(props) {
 
 const Container = styled.div`
   display: flex;
-  background-color: rgba(230, 230, 230,1);
+  background-color: rgba(230, 230, 230, 1);
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  position: relative;
   height: 100vh;
   width: 100vw;
 `;
 
 const ButtonOverlay = styled.button`
- display: block;
- background: none;
- height: 100%;
- width: 100%;
- border:none
- `;
+  display: block;
+  background: none;
+  height: 100%;
+  width: 100%;
+  border: none;
+`;
 const QuoteForm = styled.div`
   flex-direction: column;
   align-items: center;
-  background-color: rgba(255,255,255,1);
+  background-color: rgba(255, 255, 255, 1);
   border-radius: 30px;
   height: 468px;
   width: 340px;
   display: flex;
-  box-shadow: 3px 3px 6px  0.5px rgba(0,0,0,1) ;
+  box-shadow: 3px 3px 6px 0.5px rgba(0, 0, 0, 1);
 `;
 
 const BoxHeader = styled.div`
   height: 60px;
-  background-color: rgba(48,116,209,1);
+  background-color: rgba(48, 116, 209, 1);
   border-top-left-radius: 30px;
   border-top-right-radius: 30px;
   margin-bottom: 20px;
@@ -225,26 +157,25 @@ const Center = styled.div`
   position: absolute;
   pointer-events: none;
 
-  ${props =>
+  ${(props) =>
     ((props.horizontal && !props.vertical) ||
       (!props.horizontal && !props.vertical)) &&
     css`
       align-items: center;
-  `};
+    `};
 
-
-  ${props =>
+  ${(props) =>
     ((props.vertical && !props.horizontal) ||
       (!props.horizontal && !props.vertical)) &&
     css`
       justify-content: center;
-  `};
-  `;
+    `};
+`;
 
 const Text = styled.span`
   font-family: Lato;
   font-size: 20px;
-  color: rgba(255,255,255,1);
+  color: rgba(255, 255, 255, 1);
   font-weight: 900;
 `;
 
@@ -276,17 +207,17 @@ const Button = styled.div`
 const QuoteOutput = styled.div`
   flex-direction: column;
   align-items: center;
-  background-color: rgba(255,255,255,1);
+  background-color: rgba(255, 255, 255, 1);
   border-radius: 30px;
   height: 468px;
   width: 340px;
   display: flex;
-  box-shadow: 3px 3px 6px  0.5px rgba(0,0,0,1) ;
+  box-shadow: 3px 3px 6px 0.5px rgba(0, 0, 0, 1);
 `;
 
 const BoxHeader1 = styled.div`
   height: 60px;
-  background-color: rgba(48,116,209,1);
+  background-color: rgba(48, 116, 209, 1);
   border-top-left-radius: 30px;
   border-top-right-radius: 30px;
   margin-bottom: 20px;
@@ -298,7 +229,7 @@ const BoxHeader1 = styled.div`
 const FuelQuote = styled.span`
   font-family: Lato;
   font-size: 20px;
-  color: rgba(255,255,255,1);
+  color: rgba(255, 255, 255, 1);
   font-weight: 900;
 `;
 

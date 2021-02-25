@@ -1,29 +1,23 @@
 import React, { Component } from "react";
 import styled, { css } from "styled-components";
-import BgGradientTop from "../components/BgGradientTop";
-import TextInputIcon from "../components/TextInputIcon";
-import PassInputIcon from "../components/PassInputIcon";
+import TextUser from "../components/TextUser";
+import TextPassword from "../components/TextPassword";
 import { Link } from "react-router-dom";
 import ButtonSmallBlue from "../components/ButtonSmallBlue";
 
 function Registration(props) {
   return (
-    <Container>
-      <BgGradientTop
-        style={{
-          position: "absolute",
-          left: 0,
-          top: 0,
-          right: 0,
-          bottom: 0
-        }}
-      ></BgGradientTop>
+    <Container
+      style={{
+        backgroundImage: `linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(242,213,153,1) 89%)`
+      }}
+    >
       <Logo src={require("../assets/images/fuel23.png")}></Logo>
       <RegisterDialog>
         <BoxHeader>
-          <Header1>ACCOUNT SIGN IN</Header1>
+          <RegisterAccount>REGISTER ACCOUNT</RegisterAccount>
         </BoxHeader>
-        <TextInputIcon
+        <TextUser
           inputStyle="Label"
           style={{
             width: 300,
@@ -33,8 +27,8 @@ function Registration(props) {
             marginBottom: 10
           }}
           inputStyle="User ID"
-        ></TextInputIcon>
-        <PassInputIcon
+        ></TextUser>
+        <TextPassword
           style={{
             width: 300,
             height: 35,
@@ -42,8 +36,9 @@ function Registration(props) {
             marginLeft: 20,
             marginBottom: 10
           }}
-        ></PassInputIcon>
-        <PassInputIcon
+        ></TextPassword>
+        <TextPassword
+          inputStyle="Password"
           style={{
             width: 300,
             height: 35,
@@ -51,15 +46,17 @@ function Registration(props) {
             marginLeft: 20,
             marginBottom: 20
           }}
-        ></PassInputIcon>
-        <Link to="/Registration">
+          inputStyle="Confirm Password"
+        ></TextPassword>
+        <Link to="/ProfileManagement">
           <Button>
             <ButtonOverlay>
               <ButtonSmallBlue
                 style={{
                   width: 100,
                   height: 44,
-                  margin: 0
+                  margin: 0,
+                  backgroundColor: "rgba(219,87,147,1)"
                 }}
                 button="Register"
               ></ButtonSmallBlue>
@@ -67,28 +64,28 @@ function Registration(props) {
           </Button>
         </Link>
       </RegisterDialog>
+      <br></br>
+      <Container></Container>
     </Container>
   );
 }
 
 const Container = styled.div`
   display: flex;
-  background-color: rgba(230, 230, 230,1);
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  position: relative;
   height: 100vh;
   width: 100vw;
 `;
 
 const ButtonOverlay = styled.button`
- display: block;
- background: none;
- height: 100%;
- width: 100%;
- border:none
- `;
+  display: block;
+  background: none;
+  height: 100%;
+  width: 100%;
+  border: none;
+`;
 const Logo = styled.img`
   width: 174px;
   height: 100%;
@@ -97,19 +94,19 @@ const Logo = styled.img`
 
 const RegisterDialog = styled.div`
   flex-direction: column;
-  background-color: rgba(255,255,255,1);
+  background-color: rgba(255, 255, 255, 1);
   border-radius: 30px;
   align-items: center;
   width: 340px;
   margin-top: 60px;
   margin-bottom: 80px;
   display: flex;
-  box-shadow: 3px 3px 6px  0.5px rgba(0,0,0,1) ;
+  box-shadow: 3px 3px 10px 0.5px rgba(0, 0, 0, 1);
 `;
 
 const BoxHeader = styled.div`
   height: 60px;
-  background-color: rgba(48,116,209,1);
+  background-color: rgba(219, 87, 147, 1);
   border-top-left-radius: 30px;
   border-top-right-radius: 30px;
   width: 340px;
@@ -120,11 +117,11 @@ const BoxHeader = styled.div`
   justify-content: center;
 `;
 
-const Header1 = styled.span`
+const RegisterAccount = styled.span`
   font-family: Lato;
   font-style: normal;
   font-weight: 900;
-  color: rgba(255,255,255,1);
+  color: rgba(255, 255, 255, 1);
   font-size: 20px;
   align-self: center;
 `;
@@ -132,6 +129,8 @@ const Header1 = styled.span`
 const Button = styled.div`
   height: 44px;
   margin-bottom: 15px;
+  align-self: stretch;
+  align-items: center;
   flex-direction: column;
   display: flex;
   border: none;

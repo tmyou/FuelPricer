@@ -1,19 +1,20 @@
 import React, { Component } from "react";
 import styled, { css } from "styled-components";
-import MaterialCommunityIconsIcon from "react-native-vector-icons/dist/MaterialCommunityIcons";
+import FontAwesomeIcon from "react-native-vector-icons/dist/FontAwesome";
 
-function TextInputIcon(props) {
+function TextCity(props) {
   return (
     <Container {...props}>
-      <MaterialCommunityIconsIcon
-        name="calendar"
+      <FontAwesomeIcon
+        name="building"
         style={{
           color: "#616161",
-          fontSize: 24,
+          fontSize: 20,
+          padding: 0,
           paddingLeft: 8
         }}
-      ></MaterialCommunityIconsIcon>
-      <InputStyle placeholder={props.inputStyle || "Label"}></InputStyle>
+      ></FontAwesomeIcon>
+      <InputStyle placeholder="City" maxLength={100}></InputStyle>
     </Container>
   );
 }
@@ -22,8 +23,8 @@ const Container = styled.div`
   display: flex;
   flex-direction: row;
   align-items: center;
-  border-radius: 10px;
   background-color: rgba(230, 230, 230,1);
+  border-radius: 10px;
 `;
 
 const InputStyle = styled.input`
@@ -31,15 +32,15 @@ const InputStyle = styled.input`
   color: #000;
   margin-left: 16px;
   font-size: 18px;
+  align-self: stretch;
   flex: 1 1 0%;
   line-height: 16px;
-  font-weight: 400;
-  height: 43px;
   padding: 0px;
+  padding-left: 5px;
   border: none;
   background: transparent;
   display: flex;
   flex-direction: column;
 `;
 
-export default TextInputIcon;
+export default TextCity;

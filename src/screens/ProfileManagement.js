@@ -1,85 +1,80 @@
 import React, { Component } from "react";
 import styled, { css } from "styled-components";
-import BgGradientTop from "../components/BgGradientTop";
-import TextInputIcon50 from "../components/TextInputIcon50";
-import TextInputIcon100 from "../components/TextInputIcon100";
-import StateInputIcon from "../components/StateInputIcon";
-import ZipInputIcon from "../components/ZipInputIcon";
+import TextFullName from "../components/TextFullName";
+import TextAddress1 from "../components/TextAddress1";
+import TextAddress2 from "../components/TextAddress2";
+import TextCity from "../components/TextCity";
+import TextState from "../components/TextState";
+import TextZip from "../components/TextZip";
 import { Link } from "react-router-dom";
 import ButtonSmallBlue from "../components/ButtonSmallBlue";
 import ButtonSmallGrey from "../components/ButtonSmallGrey";
 
 function ProfileManagement(props) {
   return (
-    <Container>
-      <BgGradientTop
-        style={{
-          position: "absolute",
-          left: 0,
-          top: 0,
-          bottom: 0,
-          right: 0
-        }}
-      ></BgGradientTop>
+    <Container
+      style={{
+        backgroundImage: `linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(242,213,153,1) 89%)`
+      }}
+    >
       <LogoSmall src={require("../assets/images/fuel23.png")}></LogoSmall>
       <ProfileDialog>
-        <BoxHeader>
-          <Center>
-            <Header1>ACCOUNT SIGN IN</Header1>
-          </Center>
-        </BoxHeader>
-        <TextInputIcon50
-          style={{
-            width: 300,
-            height: 35,
-            marginRight: 20,
-            marginLeft: 20,
-            marginBottom: 10
-          }}
-        ></TextInputIcon50>
-        <TextInputIcon100
+        <BoxHeader1>
+          <Text>PROFILE MANAGEMENT</Text>
+        </BoxHeader1>
+        <TextFullName
           style={{
             width: 300,
             height: 35,
             marginBottom: 10
           }}
-        ></TextInputIcon100>
-        <TextInputIcon100
+        ></TextFullName>
+        <TextAddress1
           style={{
             width: 300,
             height: 35,
             marginBottom: 10
           }}
-        ></TextInputIcon100>
-        <TextInputIcon100
+        ></TextAddress1>
+        <TextAddress2
           style={{
             width: 300,
             height: 35,
             marginBottom: 10
           }}
-        ></TextInputIcon100>
-        <StateInputIcon
+        ></TextAddress2>
+        <TextCity
           style={{
             width: 300,
             height: 35,
             marginBottom: 10
           }}
-        ></StateInputIcon>
-        <ZipInputIcon
+        ></TextCity>
+        <TextState
           style={{
-            width: 300,
             height: 35,
-            marginBottom: 15
+            width: 300,
+            marginBottom: 10
           }}
-        ></ZipInputIcon>
+        ></TextState>
+        <TextZip
+          style={{
+            height: 35,
+            width: 300,
+            marginBottom: 20
+          }}
+        ></TextZip>
         <Link to="/Dashboard">
           <UpdateProfile>
             <ButtonOverlay>
               <ButtonSmallBlue
+                button="Button"
                 style={{
+                  width: 122,
                   height: 44,
-                  margin: 0,
-                  width: 145
+                  marginBottom: 5,
+                  alignSelf: "center",
+                  backgroundColor: "rgba(70,202,81,1)"
                 }}
                 button="Update Profile"
               ></ButtonSmallBlue>
@@ -90,37 +85,38 @@ function ProfileManagement(props) {
           <ButtonOverlay onClick={() => props.history.goBack()}>
             <ButtonSmallGrey
               style={{
-                width: 180,
+                width: 155,
                 height: 44,
-                margin: 0
+                marginBottom: 10,
+                alignSelf: "center"
               }}
               caption="Discard Changes"
             ></ButtonSmallGrey>
           </ButtonOverlay>
         </DiscardChanges>
       </ProfileDialog>
+      <br></br>
+      <Container></Container>
     </Container>
   );
 }
 
 const Container = styled.div`
   display: flex;
-  background-color: rgba(230, 230, 230,1);
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  position: relative;
   height: 100vh;
   width: 100vw;
 `;
 
 const ButtonOverlay = styled.button`
- display: block;
- background: none;
- height: 100%;
- width: 100%;
- border:none
- `;
+  display: block;
+  background: none;
+  height: 100%;
+  width: 100%;
+  border: none;
+`;
 const LogoSmall = styled.img`
   width: 130px;
   height: 100%;
@@ -128,75 +124,52 @@ const LogoSmall = styled.img`
 `;
 
 const ProfileDialog = styled.div`
+  background-color: rgba(255, 255, 255, 1);
+  border-radius: 30px;
+  height: 473px;
+  width: 340px;
   flex-direction: column;
   align-items: center;
-  background-color: rgba(255,255,255,1);
-  border-radius: 30px;
-  margin-top: 30px;
-  margin-bottom: 40px;
+  margin-top: 60px;
   display: flex;
-  box-shadow: 3px 3px 6px  0.5px rgba(0,0,0,1) ;
+  box-shadow: 3px 3px 10px 0.5px rgba(0, 0, 0, 1);
 `;
 
-const BoxHeader = styled.div`
+const BoxHeader1 = styled.div`
   height: 60px;
-  background-color: rgba(48,116,209,1);
+  background-color: rgba(94, 208, 105, 1);
   border-top-left-radius: 30px;
   border-top-right-radius: 30px;
+  width: 340px;
   margin-bottom: 20px;
-  align-self: stretch;
   flex-direction: column;
   display: flex;
+  justify-content: center;
 `;
 
-const Center = styled.div`
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  display: flex;
-  flex-direction: column;
-  position: absolute;
-  pointer-events: none;
-
-  ${props =>
-    ((props.horizontal && !props.vertical) ||
-      (!props.horizontal && !props.vertical)) &&
-    css`
-      align-items: center;
-  `};
-
-
-  ${props =>
-    ((props.vertical && !props.horizontal) ||
-      (!props.horizontal && !props.vertical)) &&
-    css`
-      justify-content: center;
-  `};
-  `;
-
-const Header1 = styled.span`
+const Text = styled.span`
   font-family: Lato;
-  font-size: 20px;
-  color: rgba(255,255,255,1);
+  font-style: normal;
   font-weight: 900;
+  color: rgba(255, 255, 255, 1);
+  font-size: 20px;
+  align-self: center;
 `;
 
 const UpdateProfile = styled.div`
-  flex-direction: column;
-  width: 145px;
   height: 44px;
+  margin: 0px;
   margin-bottom: 5px;
-  align-items: center;
+  flex-direction: column;
+  display: flex;
   border: none;
 `;
 
 const DiscardChanges = styled.div`
-  flex-direction: column;
-  width: 197px;
   height: 44px;
-  margin-bottom: 15px;
-  align-items: center;
+  margin-bottom: 20px;
+  flex-direction: column;
+  display: flex;
   border: none;
 `;
 
