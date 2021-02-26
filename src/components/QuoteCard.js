@@ -61,15 +61,15 @@ function QuoteCard(props) {
 
 const Container = styled.div`
   display: flex;
-  background-color: rgba(255,255,255,1);
+  background-color: rgba(255, 255, 255, 1);
   border-radius: 30px;
   flex-direction: column;
-  box-shadow: 3px 3px 10px  0.5px rgba(0,0,0,1) ;
+  box-shadow: 3px 3px 10px 0.5px rgba(0, 0, 0, 1);
 `;
 
 const QuoteHeader = styled.div`
   height: 80px;
-  background-color: rgba(230, 230, 230,1);
+  background-color: rgba(230, 230, 230, 1);
   border-top-left-radius: 30px;
   border-top-right-radius: 30px;
   width: 400px;
@@ -80,7 +80,7 @@ const QuoteHeader = styled.div`
 const QuotePrice = styled.span`
   font-family: Lato;
   font-size: 50px;
-  color: rgba(28,80,28,1);
+  color: rgba(28, 80, 28, 1);
   font-weight: 900;
   text-align: center;
   position: absolute;
@@ -93,7 +93,7 @@ const QuotePrice = styled.span`
 const QuoteCreated = styled.span`
   font-family: Lato;
   font-size: 14px;
-  color: rgba(90,90,90,1);
+  color: rgba(90, 90, 90, 1);
   font-weight: 700;
   text-align: center;
   position: absolute;
@@ -141,7 +141,7 @@ const GallonsRequested = styled.span`
   font-family: Lato;
   font-style: normal;
   font-weight: 900;
-  color: rgba(74,74,74,1);
+  color: rgba(74, 74, 74, 1);
   height: 20px;
   width: 350px;
   font-size: 18px;
@@ -151,7 +151,7 @@ const PriceGallon = styled.span`
   font-family: Lato;
   font-style: normal;
   font-weight: 900;
-  color: rgba(74,74,74,1);
+  color: rgba(74, 74, 74, 1);
   height: 20px;
   width: 350px;
   font-size: 18px;
@@ -160,8 +160,8 @@ const PriceGallon = styled.span`
 const DeliveryDate = styled.span`
   font-family: Lato;
   font-style: normal;
-  font-weight: 700;
-  color: rgba(74,74,74,1);
+  font-weight: 400;
+  color: rgba(74, 74, 74, 1);
   height: 20px;
   width: 350px;
   font-size: 18px;
@@ -170,8 +170,8 @@ const DeliveryDate = styled.span`
 const DeliveryAddress = styled.span`
   font-family: Lato;
   font-style: normal;
-  font-weight: 700;
-  color: rgba(74,74,74,1);
+  font-weight: 400;
+  color: rgba(74, 74, 74, 1);
   height: 20px;
   width: 350px;
   font-size: 18px;
