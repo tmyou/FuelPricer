@@ -93,6 +93,7 @@ const ButtonOverlay = styled.button`
 const Logo = styled.img`
   width: 174px;
   height: 100%;
+  margin-top: 50px;
   object-fit: contain;
 `;
 

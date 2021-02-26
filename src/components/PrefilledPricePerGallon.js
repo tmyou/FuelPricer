@@ -33,7 +33,7 @@ const TextInput = styled.input`
   line-height: 16px;
   padding: 0px;
   width: 300px;
-  height: 35px;
+  height: 34px;
   border-radius: 10px;
   background-color: rgba(230, 230, 230,1);
   padding-left: 10px;

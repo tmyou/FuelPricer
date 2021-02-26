@@ -16,11 +16,7 @@ const Container = styled.div`
 
 const Rect = styled.div`
   height: 768px;
-  background-image: linear-gradient(
-    180deg,
-    rgba(242, 213, 153, 1) 17%,
-    #eeeeee 100%
-  );
+  background-image: linear-gradient(180deg, rgba(242,213,153,1) 17%, #EEEEEE 100%);
 `;
 
 export default BgGradientBottom;

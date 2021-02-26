@@ -3,12 +3,13 @@ import styled, { css } from "styled-components";
 import { Link } from "react-router-dom";
 import ButtonBig from "../components/ButtonBig";
 import ButtonFancy from "../components/ButtonFancy";
+import { rgbToHex } from "@material-ui/core";
 
 function Dashboard(props) {
   return (
     <Container
       style={{
-        backgroundImage: `linear-gradient(180deg, rgba(242, 213, 153, 1) 17%, #eeeeee 100%)`
+        backgroundImage: `linear-gradient(180deg, rgba(242,213,153,1) 20%, #FFFFFF 90%)`
       }}
     >
       <Logo src={require("../assets/images/fuel23.png")}></Logo>
@@ -104,6 +105,7 @@ const ButtonOverlay = styled.button`
 const Logo = styled.img`
   width: 174px;
   height: 100%;
+  margin-top: 50px;
   object-fit: contain;
 `;
 
@@ -116,6 +118,7 @@ const Greeting = styled.span`
   height: 72px;
   font-size: 50px;
   text-align: center;
+  text-shadow: 2px 2px #ffffff;
   width: 100vw;
   margin-top: 20px;
   margin-bottom: 10px;
@@ -128,6 +131,7 @@ const Prompt = styled.span`
   color: #121212;
   font-size: 20px;
   text-align: center;
+  text-shadow: 2px 2px #ffffff;
   height: 24px;
   align-self: center;
 `;

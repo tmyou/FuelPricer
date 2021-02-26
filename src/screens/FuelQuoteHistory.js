@@ -1,59 +1,21 @@
 import React, { Component } from "react";
 import styled, { css } from "styled-components";
-import TextState from "../components/TextState";
-import TextZip from "../components/TextZip";
-import ButtonSmallBlue from "../components/ButtonSmallBlue";
-import ButtonSmallGrey from "../components/ButtonSmallGrey";
 import { Link } from "react-router-dom";
 import ButtonFancy from "../components/ButtonFancy";
-import ReactList from "react-list";
+import QuoteCard from "../components/QuoteCard";
 
 function FuelQuoteHistory(props) {
   return (
     <Container
       style={{
-        backgroundImage: `linear-gradient(215deg, rgba(242,213,153,1) 20%, #FFFFFF 90%)`
+        backgroundImage: `linear-gradient(180deg, rgba(242,213,153,1) 20%, #FFFFFF 90%)`
       }}
     >
-      <QuoteForm>
-        <BoxHeader>
-          <Center>
-            <Text>FUEL QUOTE FORM</Text>
-          </Center>
-        </BoxHeader>
-        <TextState
-          style={{
-            width: 300,
-            height: 35,
-            marginBottom: 10
-          }}
-        ></TextState>
-        <TextZip
-          style={{
-            width: 300,
-            height: 35,
-            marginBottom: 15
-          }}
-        ></TextZip>
-        <ButtonSmallBlue
-          style={{
-            width: 100,
-            height: 44,
-            marginBottom: 5
-          }}
-        ></ButtonSmallBlue>
-        <ButtonSmallGrey
-          style={{
-            width: 100,
-            height: 44,
-            marginBottom: 20
-          }}
-        ></ButtonSmallGrey>
-      </QuoteForm>
-      <Group>
+      <HeaderGroup>
         <Logo1 src={require("../assets/images/fuel23.png")}></Logo1>
+        <Header>Fuel Quote History</Header>
         <Link to="/Dashboard">
-          <Button>
+          <Return>
             <ButtonOverlay>
               <ButtonFancy
                 button="Button"
@@ -61,59 +23,91 @@ function FuelQuoteHistory(props) {
                   height: 44,
                   width: 100,
                   borderRadius: 100,
-                  marginBottom: 0
+                  alignSelf: "center"
                 }}
                 button="Return"
               ></ButtonFancy>
             </ButtonOverlay>
-          </Button>
+          </Return>
         </Link>
-      </Group>
-      <QuoteOutput>
-        <BoxHeader1>
-          <Center>
-            <FuelQuote>FUEL QUOTE</FuelQuote>
-          </Center>
-        </BoxHeader1>
-        <TextState
+      </HeaderGroup>
+      <QuoteList>
+        <QuoteCard
           style={{
-            width: 300,
-            height: 35,
-            marginBottom: 10
-          }}
-        ></TextState>
-        <TextZip
-          style={{
-            width: 300,
-            height: 35,
+            width: 400,
+            height: 214,
             marginBottom: 15
           }}
-        ></TextZip>
-        <ButtonSmallBlue
+          quotePrice="$17,896.90"
+          quoteCreated="Created 2/25/2021"
+          gallonsRequested="7,654 gallons"
+          priceGallon="$2.35 per gallon"
+          deliveryDate="4/13/2021"
+          deliveryAddress="4800 Calhoun Rd, Houston, TX 77004"
+        ></QuoteCard>
+        <QuoteCard
           style={{
-            width: 100,
-            height: 44,
-            marginBottom: 5
+            width: 400,
+            height: 214,
+            marginBottom: 15
           }}
-        ></ButtonSmallBlue>
-        <ButtonSmallGrey
+          quotePrice="$203,955.07"
+          quoteCreated="Created 2/19/2021"
+          gallonsRequested="81,257 gallons"
+          priceGallon="$2.51 per gallon"
+          deliveryDate="2/24/2021"
+          deliveryAddress="4800 Calhoun Rd, Houston, TX 77004"
+        ></QuoteCard>
+        <QuoteCard
           style={{
-            width: 100,
-            height: 44,
-            marginBottom: 20
+            width: 400,
+            height: 214,
+            marginBottom: 15
           }}
-        ></ButtonSmallGrey>
-      </QuoteOutput>
+          quotePrice="$206.57"
+          quoteCreated="Created 1/18/2021"
+          gallonsRequested="91 gallons"
+          priceGallon="$2.27 per gallon"
+          deliveryDate="1/31/2021"
+          deliveryAddress="4800 Calhoun Rd, Houston, TX 77004"
+        ></QuoteCard>
+        <QuoteCard
+          style={{
+            width: 400,
+            height: 214,
+            marginBottom: 15
+          }}
+          quotePrice="$21,170.10"
+          quoteCreated="Created 12/31/2020"
+          gallonsRequested="8,302 gallons"
+          priceGallon="$2.55 per gallon"
+          deliveryDate="1/21/2021"
+          deliveryAddress="4800 Calhoun Rd, Houston, TX 77004"
+        ></QuoteCard>
+        <QuoteCard
+          style={{
+            width: 400,
+            height: 214,
+            marginBottom: 15
+          }}
+          quotePrice="$4,964,873.08"
+          quoteCreated="Created 11/2/2020"
+          gallonsRequested="1,700,299 gallons"
+          priceGallon="$2.92 per gallon"
+          deliveryDate="12/5/2021"
+          deliveryAddress="4800 Calhoun Rd, Houston, TX 77004"
+        ></QuoteCard>
+      </QuoteList>
     </Container>
   );
 }
 
 const Container = styled.div`
   display: flex;
-  background-color: rgba(230, 230, 230, 1);
-  flex-direction: row;
+  background-color: rgba(242, 213, 153, 1);
+  flex-direction: column;
   align-items: center;
-  justify-content: center;
+  overflow-x: hidden;
   height: 100vh;
   width: 100vw;
 `;
@@ -125,112 +119,52 @@ const ButtonOverlay = styled.button`
   width: 100%;
   border: none;
 `;
-const QuoteForm = styled.div`
+const HeaderGroup = styled.div`
   flex-direction: column;
-  align-items: center;
-  background-color: rgba(255, 255, 255, 1);
-  border-radius: 30px;
-  height: 468px;
-  width: 340px;
-  display: flex;
-  box-shadow: 3px 3px 6px 0.5px rgba(0, 0, 0, 1);
-`;
-
-const BoxHeader = styled.div`
-  height: 60px;
-  background-color: rgba(48, 116, 209, 1);
-  border-top-left-radius: 30px;
-  border-top-right-radius: 30px;
-  margin-bottom: 20px;
-  align-self: stretch;
-  flex-direction: column;
-  display: flex;
-`;
-
-const Center = styled.div`
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  display: flex;
-  flex-direction: column;
-  position: absolute;
-  pointer-events: none;
-
-  ${(props) =>
-    ((props.horizontal && !props.vertical) ||
-      (!props.horizontal && !props.vertical)) &&
-    css`
-      align-items: center;
-    `};
-
-  ${(props) =>
-    ((props.vertical && !props.horizontal) ||
-      (!props.horizontal && !props.vertical)) &&
-    css`
-      justify-content: center;
-    `};
-`;
-
-const Text = styled.span`
-  font-family: Lato;
-  font-size: 20px;
-  color: rgba(255, 255, 255, 1);
-  font-weight: 900;
-`;
-
-const Group = styled.div`
-  flex-direction: column;
-  align-self: center;
   align-items: center;
   justify-content: center;
-  margin-right: 60px;
-  margin-left: 60px;
+  margin-top: 50px;
+  margin-bottom: 50px;
   display: flex;
 `;
 
 const Logo1 = styled.img`
   width: 174px;
   height: 100%;
-  margin-bottom: 400px;
+  margin-bottom: 20px;
   object-fit: contain;
 `;
 
-const Button = styled.div`
-  flex-direction: column;
-  width: 100px;
+const Header = styled.span`
+  font-family: Calistoga;
+  font-style: normal;
+  font-weight: 400;
+  color: rgba(88, 86, 214, 1);
+  height: 54px;
+  font-size: 40px;
+  text-align: center;
+  text-shadow: 2px 2px #ffffff;
+  width: 441px;
+  margin: 0px;
+  margin-bottom: 20px;
+`;
+
+const Return = styled.div`
   height: 44px;
-  margin-bottom: 50px;
-  border: none;
-`;
-
-const QuoteOutput = styled.div`
-  flex-direction: column;
-  align-items: center;
-  background-color: rgba(255, 255, 255, 1);
-  border-radius: 30px;
-  height: 468px;
-  width: 340px;
-  display: flex;
-  box-shadow: 3px 3px 6px 0.5px rgba(0, 0, 0, 1);
-`;
-
-const BoxHeader1 = styled.div`
-  height: 60px;
-  background-color: rgba(48, 116, 209, 1);
-  border-top-left-radius: 30px;
-  border-top-right-radius: 30px;
+  margin: 0px;
   margin-bottom: 20px;
   align-self: stretch;
   flex-direction: column;
   display: flex;
+  border: none;
 `;
 
-const FuelQuote = styled.span`
-  font-family: Lato;
-  font-size: 20px;
-  color: rgba(255, 255, 255, 1);
-  font-weight: 900;
+const QuoteList = styled.div`
+  height: 214px;
+  flex-direction: column;
+  align-items: center;
+  width: 400px;
+  display: flex;
 `;
 
 export default FuelQuoteHistory;

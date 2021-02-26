@@ -10,7 +10,8 @@ function TextFullName(props) {
         style={{
           color: "#616161",
           fontSize: 24,
-          paddingLeft: 8
+          paddingLeft: 8,
+          marginRight: 6
         }}
       ></FontAwesomeIcon>
       <InputStyle
@@ -40,7 +41,7 @@ const InputStyle = styled.input`
   line-height: 16px;
   font-weight: 400;
   padding: 0px;
-  padding-left: 6px;
+  padding-left: 0px;
   border: none;
   background: transparent;
   display: flex;

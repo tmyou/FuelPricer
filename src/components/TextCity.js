@@ -11,7 +11,8 @@ function TextCity(props) {
           color: "#616161",
           fontSize: 20,
           padding: 0,
-          paddingLeft: 8
+          paddingLeft: 8,
+          marginRight: 5
         }}
       ></FontAwesomeIcon>
       <InputStyle placeholder="City" maxLength={100}></InputStyle>
@@ -36,7 +37,7 @@ const InputStyle = styled.input`
   flex: 1 1 0%;
   line-height: 16px;
   padding: 0px;
-  padding-left: 5px;
+  padding-left: 0px;
   border: none;
   background: transparent;
   display: flex;

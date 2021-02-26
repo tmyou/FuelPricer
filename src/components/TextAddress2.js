@@ -10,7 +10,8 @@ function TextAddress2(props) {
         style={{
           color: "#616161",
           fontSize: 24,
-          paddingLeft: 8
+          paddingLeft: 8,
+          marginRight: 9
         }}
       ></FontAwesomeIcon>
       <InputStyle placeholder="Address Line 2" maxLength={100}></InputStyle>
@@ -35,7 +36,7 @@ const InputStyle = styled.input`
   flex: 1 1 0%;
   line-height: 16px;
   padding: 0px;
-  padding-left: 9px;
+  padding-left: 0px;
   border: none;
   background: transparent;
   display: flex;
